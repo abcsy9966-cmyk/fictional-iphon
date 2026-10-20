@@ -24,4 +24,592 @@ body {
     width: 350px;
     height: 720px;
     max-height: 94vh;
-    border...
+    border: 8px solid #202024;
+    border-radius: 48px;
+    overflow: hidden;
+    position: relative;
+    background: #f6e8e8;
+    box-shadow: 0 20px 60px #0003;
+}
+
+.wallpaper {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 20% 20%, #f9d9dc 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 70%, #d6d9ee 0%, transparent 50%),
+        linear-gradient(145deg, #f4dfe2, #c7cce2);
+}
+
+.status {
+    position: absolute;
+    top: 15px;
+    left: 23px;
+    right: 23px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 5;
+}
+
+.island {
+    position: absolute;
+    width: 95px;
+    height: 26px;
+    background: #111;
+    border-radius: 20px;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 6;
+}
+
+.content {
+    position: absolute;
+    inset: 55px 15px 100px;
+    z-index: 2;
+}
+
+.date {
+    text-align: center;
+    font-size: 13px;
+    color: #444;
+    margin-top: 10px;
+}
+
+.bigtime {
+    text-align: center;
+    font-size: 58px;
+    font-weight: 300;
+    letter-spacing: -3px;
+    margin: 0 0 32px;
+    color: #272631;
+}
+
+.apps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px 8px;
+}
+
+.app {
+    border: none;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+    color: #28262d;
+    font-size: 11px;
+    text-align: center;
+}
+
+.icon {
+    width: 56px;
+    height: 56px;
+    margin: auto auto 6px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 29px;
+    box-shadow: 0 3px 8px #0001;
+}
+
+.kakao { background: #fee500; }
+.notes { background: #fff; }
+.photos { background: linear-gradient(135deg,#ffcf7a,#ff779c,#9d88ff); }
+.phoneicon { background: #42cd73; color: white; }
+.camera { background: #333; color: white; }
+.settings { background: #dedfe4; }
+.safari { background: #fff; }
+.mail { background: #60a5fa; color: white; }
+
+.dock {
+    position: absolute;
+    z-index: 3;
+    bottom: 17px;
+    left: 13px;
+    right: 13px;
+    height: 76px;
+    border-radius: 25px;
+    background: #ffffff70;
+    backdrop-filter: blur(18px);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.dock .icon {
+    width: 51px;
+    height: 51px;
+    margin: 0;
+}
+
+.panel {
+    display: none;
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    background: #f7f7fa;
+    color: #222;
+}
+
+.panel.active {
+    display: flex;
+    flex-direction: column;
+}
+
+.panelhead {
+    padding: 58px 18px 15px;
+    font-size: 23px;
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+}
+
+.back {
+    background: none;
+    border: none;
+    color: #1686ed;
+    font-size: 15px;
+    cursor: pointer;
+    text-align: left;
+    padding: 18px;
+}
+
+.listitem {
+    padding: 17px;
+    border-bottom: 1px solid #e7e7e7;
+    cursor: pointer;
+}
+
+.small {
+    color: #888;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.chat {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background: #abc9dc;
+}
+
+.bubble {
+    background: white;
+    padding: 11px 13px;
+    border-radius: 5px 15px 15px 15px;
+    margin: 12px 0;
+    max-width: 85%;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+.mine {
+    background: #fee500;
+    margin-left: auto;
+    border-radius: 15px 5px 15px 15px;
+}
+
+.composer {
+    display: flex;
+    padding: 10px;
+    gap: 7px;
+    background: white;
+}
+
+.composer input {
+    min-width: 0;
+    flex: 1;
+    padding: 11px;
+    border: 1px solid #ddd;
+    border-radius: 18px;
+}
+
+.composer button, .action {
+    background: #fee500;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.note {
+    margin: 15px;
+    padding: 18px;
+    background: #fff5bd;
+    border-radius: 8px;
+    line-height: 1.9;
+    white-space: pre-wrap;
+}
+
+.call {
+    flex: 1;
+    background: linear-gradient(#30354c,#11131d);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #777b91;
+    display: grid;
+    place-items: center;
+    font-size: 45px;
+}
+
+.callbuttons {
+    display: flex;
+    gap: 45px;
+    margin-top: 50px;
+}
+
+.callbuttons button {
+    border: none;
+    border-radius: 50%;
+    width: 65px;
+    height: 65px;
+    font-size: 25px;
+    cursor: pointer;
+    color: white;
+}
+
+.homebar {
+    position: absolute;
+    z-index: 20;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 110px;
+    height: 4px;
+    border-radius: 5px;
+    background: #222;
+}
+
+@media (max-width: 380px) {
+    .phone {
+        width: 100vw;
+        height: 100dvh;
+        max-height: 100dvh;
+        border-radius: 0;
+        border: none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="phone">
+
+<div class="wallpaper" id="wallpaper"></div>
+<div class="island"></div>
+
+<div class="status">
+    <span id="statusTime">9:41</span>
+    <span>●●● ▰ ▰</span>
+</div>
+
+<div id="home" class="content">
+    <div class="date" id="dateText">10월 20일 화요일</div>
+    <div class="bigtime" id="clock">9:41</div>
+
+    <div class="apps">
+        <button class="app" onclick="openApp('kakao')">
+            <div class="icon kakao">💬</div>카카오톡
+        </button>
+        <button class="app" onclick="openApp('notes')">
+            <div class="icon notes">📝</div>메모
+        </button>
+        <button class="app" onclick="openApp('photos')">
+            <div class="icon photos">🌈</div>사진
+        </button>
+        <button class="app" onclick="openApp('phone')">
+            <div class="icon phoneicon">☎</div>전화
+        </button>
+        <button class="app" onclick="openApp('camera')">
+            <div class="icon camera">📷</div>카메라
+        </button>
+        <button class="app" onclick="openApp('settings')">
+            <div class="icon settings">⚙️</div>설정
+        </button>
+        <button class="app" onclick="openApp('safari')">
+            <div class="icon safari">🧭</div>Safari
+        </button>
+        <button class="app" onclick="openApp('mail')">
+            <div class="icon mail">✉️</div>메일
+        </button>
+    </div>
+</div>
+
+<div class="dock">
+    <button class="app" onclick="openApp('phone')">
+        <div class="icon phoneicon">☎</div>
+    </button>
+    <button class="app" onclick="openApp('kakao')">
+        <div class="icon kakao">💬</div>
+    </button>
+    <button class="app" onclick="openApp('safari')">
+        <div class="icon safari">🧭</div>
+    </button>
+    <button class="app" onclick="openApp('photos')">
+        <div class="icon photos">🌈</div>
+    </button>
+</div>
+
+<div class="panel" id="kakao">
+    <button class="back" onclick="goHome()">‹ 홈 화면</button>
+    <div class="panelhead">카카오톡 <span style="font-size:13px">●</span></div>
+    <div class="listitem" onclick="openChat('지우')">
+        <b>지우</b>
+        <div class="small">우리 어제 일은 아무한테도 말하지 마.</div>
+    </div>
+    <div class="listitem" onclick="openChat('민재')">
+        <b>민재</b>
+        <div class="small">지금 어디야? 전화 좀 받아.</div>
+    </div>
+    <div class="listitem" onclick="openChat('알 수 없음')">
+        <b>알 수 없음</b>
+        <div class="small">너 그 사진 가지고 있지?</div>
+    </div>
+</div>
+
+<div class="panel" id="chatPanel">
+    <button class="back" onclick="openApp('kakao')">‹ 대화 목록</button>
+    <div class="panelhead" id="chatTitle">대화</div>
+    <div class="chat" id="chatMessages"></div>
+    <form class="composer" id="chatForm">
+        <input id="messageInput" placeholder="메시지 입력..." autocomplete="off">
+        <button type="submit">전송</button>
+    </form>
+</div>
+
+<div class="panel" id="notes">
+    <button class="back" onclick="goHome()">‹ 홈 화면</button>
+    <div class="panelhead">메모</div>
+    <div class="listitem" onclick="showNote('diary')">10월 18일 일기</div>
+    <div class="listitem" onclick="showNote('secret')">🔒 열지 말 것</div>
+    <div class="note" id="noteContent">메모를 선택해 줘.</div>
+</div>
+
+<div class="panel" id="photos">
+    <button class="back" onclick="goHome()">‹ 홈 화면</button>
+    <div class="panelhead">사진</div>
+    <div class="note">최근 항목<br><br>🌅 여행 사진<br><br>🖼️ 삭제된 사진<br><br>📷 스크린샷</div>
+</div>
+
+<div class="panel" id="phone">
+    <button class="back" onclick="goHome()">‹ 홈 화면</button>
+    <div class="panelhead">전화</div>
+    <div class="listitem" onclick="incomingCall('민재')">📞 민재 — 전화 걸기</div>
+    <div class="listitem" onclick="incomingCall('알 수 없음')">📞 알 수 없음 — 전화 걸기</div>
+    <div class="note">최근 통화<br><br>민재 · 어제 23:48<br>지우 · 어제 21:13</div>
+</div>
+
+<div class="panel" id="callPanel">
+    <div class="call">
+        <div class="avatar">👤</div>
+        <div id="callerName" style="font-size:25px">민재</div>
+        <div id="callStatus">iPhone 통화</div>
+        <div class="callbuttons">
+            <button style="background:#ff453a" onclick="endCall()">✕</button>
+            <button style="background:#30c75b" onclick="answerCall()">☎</button>
+        </div>
+        <div id="callText" style="padding:15px;text-align:center"></div>
+    </div>
+</div>
+
+<div class="panel" id="settings">
+    <button class="back" onclick="goHome()">‹ 홈 화면</button>
+    <div class="panelhead">설정</div>
+    <div class="listitem">✈️ 에어플레인 모드</div>
+    <div class="listitem">📶 Wi-Fi　연결됨</div>
+    <div class="listitem">🔋 배터리　84%</div>
+    <div class="listitem">📱 이 iPhone에 관하여</div>
+</div>
+
+<div class="panel" id="camera">
+    <button class="back" onclick="goHome()">‹ 홈 화면</button>
+    <div class="panelhead">카메라</div>
+    <div class="note">📷<br><br>카메라 화면을 준비 중입니다.</div>
+</div>
+
+<div class="panel" id="safari">
+    <button class="back" onclick="goHome()">‹ 홈 화면</button>
+    <div class="panelhead">Safari</div>
+    <div class="note">이 휴대폰에 저장된 페이지가 없습니다.</div>
+</div>
+
+<div class="panel" id="mail">
+    <button class="back" onclick="goHome()">‹ 홈 화면</button>
+    <div class="panelhead">메일</div>
+    <div class="note">받은 편지함<br><br>새로운 메일이 없습니다.</div>
+</div>
+
+<div class="homebar"></div>
+</div>
+
+<script>
+let currentContact = '';
+let callTimer = null;
+
+function openApp(id) {
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+}
+
+function goHome() {
+    clearTimeout(callTimer);
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+}
+
+function openChat(name) {
+    currentContact = name;
+    document.getElementById('chatTitle').textContent = name;
+    document.getElementById('chatMessages').innerHTML = '';
+
+    const histories = {
+        '지우': [
+            ['them', '우리 어제 일은 아무한테도 말하지 마.'],
+            ['them', '특히 민재한테는 절대 안 돼.'],
+            ['them', '무슨 일이 생겨도 모르는 척해.']
+        ],
+        '민재': [
+            ['them', '지금 어디야? 전화 좀 받아.'],
+            ['them', '너한테 꼭 할 말이 있어.'],
+            ['them', '그날 밤에 있었던 일 말이야.']
+        ],
+        '알 수 없음': [
+            ['them', '너 그 사진 가지고 있지?'],
+            ['them', '삭제했다고 끝나는 거 아니야.']
+        ]
+    };
+
+    histories[name].forEach(m => addBubble(m[1], false));
+    openApp('chatPanel');
+}
+
+function addBubble(text, mine) {
+    const bubble = document.createElement('div');
+    bubble.className = 'bubble' + (mine ? ' mine' : '');
+    bubble.textContent = text;
+    document.getElementById('chatMessages').appendChild(풍선껌);
+    document.getElementById('chatMessages').scrollTop = 99999;
+}
+
+document.getElementById('chatForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const input = document.getElementById('messageInput');
+    const text = input.value.trim();
+
+    if (!text) return;
+
+    addBubble(text, true);
+    input.value = '';
+
+    if (/전화|통화|받아|어디야|누구야/.test(text) || /답장|왜|사진/.test(text)) {
+        setTimeout(() => incomingCall(currentContact), 1000);
+    } else {
+        setTimeout(() => {
+            addBubble('지금은 말할 수 없어. 직접 만나서 얘기하자.', false);
+        }, 900);
+    }
+});
+
+function showNote(type) {
+    const note = document.getElementById('noteContent');
+
+    if (type === 'diary') {
+        note.textContent =
+`10월 18일
+
+오늘도 민재에게 연락이 왔다.
+아직 그날의 일을 잊지 못한 것 같다.
+
+지우는 아무에게도 말하지 말라고 했다.
+
+그런데 휴대폰에 남아 있는 사진은
+도대체 누가 찍은 걸까?`;
+    } else {
+        const answer = prompt('메모 비밀번호를 입력하세요.');
+
+        if (answer === '1018') {
+            note.textContent =
+`[숨겨진 메모]
+
+그날 밤 11시 48분.
+민재에게서 전화가 왔다.
+
+나는 받지 않았다.
+
+그런데 통화 기록에는
+내가 전화를 받은 것으로 남아 있다.
+
+도대체 무슨 일이 있었던 거지?`;
+        } else if (answer !== null) {
+            note.textContent = '비밀번호가 틀렸습니다.';
+        }
+    }
+}
+
+function incomingCall(name) {
+    currentContact = name || currentContact || '알 수 없음';
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    document.getElementById('callPanel').classList.add('active');
+    document.getElementById('callerName').textContent = currentContact;
+    document.getElementById('callStatus').textContent = '수신 전화';
+    document.getElementById('callText').textContent = '';
+    clearTimeout(callTimer);
+
+    callTimer = setTimeout(() => {
+        const status = document.getElementById('callStatus');
+        if (document.getElementById('callPanel').classList.contains('active')) {
+            status.textContent = '부재중 전화';
+        }
+    }, 20000);
+}
+
+function answerCall() {
+    clearTimeout(callTimer);
+    document.getElementById('callStatus').textContent = '통화 중 · 00:01';
+    document.getElementById('callText').textContent =
+        currentContact + ': "너 지금 혼자 있어? 내 말 잘 들어."';
+}
+
+function endCall() {
+    clearTimeout(callTimer);
+    goHome();
+}
+
+function updateClock() {
+    const now = new Date();
+    const time = now.toLocaleTimeString('ko-KR', {
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false
+    });
+
+    document.getElementById('clock').textContent = time;
+    document.getElementById('statusTime').textContent = time;
+
+    document.getElementById('dateText').textContent =
+        now.toLocaleDateString('ko-KR', {
+            month: 'long',
+            day: 'numeric',
+            weekday: 'long'
+        });
+}
+
+updateClock();
+setInterval(updateClock, 30000);
+</script>
+
+</body>
+</html>
